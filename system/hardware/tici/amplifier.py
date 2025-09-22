@@ -147,10 +147,10 @@ class Amplifier:
     return self.set_configs(cfgs)
 
 
-if __name__ == "__main__":
-  with open("/sys/firmware/devicetree/base/model") as f:
-    model = f.read().strip('\x00')
-  model = model.split('comma ')[-1]
+#if __name__ == "__main__":
+  #with open("/sys/firmware/devicetree/base/model") as f:
+   # model = f.read().strip('\x00')
+  #model = model.split('comma ')[-1]
 
-  amp = Amplifier()
-  amp.initialize_configuration(model)
+  #amp = Amplifier()
+  #amp.initialize_configuration(model)
