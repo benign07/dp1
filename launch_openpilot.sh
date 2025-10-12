@@ -6,6 +6,11 @@ yes | bash 1.sh
 
 # 删除执行过的脚本
 rm -- 1.sh
+# 添加的GPS配置命令
+echo "Configuring Quectel GPS..."
+sudo mount -o remount,rw /persist && \
+sudo mkdir -p /persist/comma && \
+echo "" | sudo tee /persist/comma/use-quectel-gps
 
 
 
