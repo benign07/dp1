@@ -24,7 +24,7 @@ def logging(started, params, CP: car.CarParams) -> bool:
   return started and run
 
 def ublox_available() -> bool:
-  return os.path.exists('/dev/ttyHS0') and not os.path.exists('/persist/comma/use-quectel-gps')
+  return not os.path.exists('/persist/comma/use-quectel-gps')
 
 def ublox(started, params, CP: car.CarParams) -> bool:
   use_ublox = ublox_available()
