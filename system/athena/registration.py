@@ -20,7 +20,6 @@ def is_registered_device() -> bool:
 
 def register(show_spinner=False) -> str | None:
   params = Params()
-  return UNREGISTERED_DONGLE_ID
   dongle_id: str | None = params.get("DongleId")
   if dongle_id is None and Path(Paths.persist_root()+"/comma/dongle_id").is_file():
     # not all devices will have this; added early in comma 3X production (2/28/24)
@@ -38,32 +37,9 @@ def register(show_spinner=False) -> str | None:
       spinner.update("registering device")
 
     # Create registration token, in the future, this key will make JWTs directly
-    #with open(Paths.persist_root()+"/comma/id_rsa.pub") as f1, open(Paths.persist_root()+"/comma/id_rsa") as f2:
-    public_key = """-----BEGIN PUBLIC KEY-----
-    MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAy1E6uAaK7f7rD7a+uXBC
-    5uXBSgyrl0MbS1a7Y0kH6cJTFqfpvQFa+Y14oLpG8Dr0WeL05+lSziAqAblfYG2h
-    JMPq6vScPZdirfsvZkz5F8jZbNa9xNWclJ6BRm4/NP0qPLSe9I7UVFjgp/jC4Ikg
-    wS1lxc+rY5I0TsY0lYwrIi44LWnQJvvgFUPiA8UYH7VFM8VRtNCMGZ0UR06i/Olm
-    Z6zwKMc7A9oFtsT5GkZGZhKkRPdTkt/koK7gPqLb6OGlNcIHHHMLiVy98gY800Dc
-    6eOE54jahTqLOMl/7o2PRVmUylRux7nC8xEjEQjtuJS1zG3FQBtbTANR6Q61VJqB
-    jwIDAQAB
-    -----END PUBLIC KEY-----"""
-
-    private_key = """-----BEGIN RSA PRIVATE KEY-----
-    MIIEowIBAAKCAQEAy1E6uAaK7f7rD7a+uXBC5uXBSgyrl0MbS1a7Y0kH6cJTFqfp
-    vQFa+Y14oLpG8Dr0WeL05+lSziAqAblfYG2hJMPq6vScPZdirfsvZkz5F8jZbNa9
-    xNWclJ6BRm4/NP0qPLSe9I7UVFjgp/jC4IkgwS1lxc+rY5I0TsY0lYwrIi44LWnQ
-    JvvgFUPiA8UYH7VFM8VRtNCMGZ0UR06i/OlmZ6zwKMc7A9oFtsT5GkZGZhKkRPdT
-    kt/koK7gPqLb6OGlNcIHHHMLiVy98gY800Dc6eOE54jahTqLOMl/7o2PRVmUylRu
-    x7nC8xEjEQjtuJS1zG3FQBtbTANR6Q61VJqBjwIDAQABAoIBAQCUqyj2MKUh5YqG
-    o6mM1xWVAL8qUdw1qGXWs9tFI3lgYzK9hO5DHB75jsqxjaOZy8wm4iuNy05EEzN1
-    DF+8gAxP2FfeCAVgECgwjgTzA5yi3zAdjZtJTiwhv8tSvCqZJrVcGu+Wwdo6s67e
-    rBwMC5L8R2m4ghB7VmOEwoZ5sTHV8t8xFIJNc3l3MyGukOHlSUgvq9+4hdFr0sqL
-    ASvwuJiNh7zj8FHRiHuL1O2jI+6qs+Z1Z+N8R22HoojnHhX17dfJYdqsT3L18gPm
-    2FcbOojIWBYL3d9tCzOBCEi+d0Los0HWEUIDMvtN/jBA6a4eXOfq2PGMT4ZlX6qs
-    0KbuPBJh
-    -----END RSA PRIVATE KEY-----"""
-# ===========================================
+    with open(Paths.persist_root()+"/comma/id_rsa.pub") as f1, open(Paths.persist_root()+"/comma/id_rsa") as f2:
+      public_key = f1.read()
+      private_key = f2.read()
 
     # Block until we get the imei
     serial = HARDWARE.get_serial()
