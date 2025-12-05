@@ -30,7 +30,7 @@ rm -rf $BUILD_DIR
 mkdir -p $BUILD_DIR
 cd $BUILD_DIR
 git init
-git remote add origin https://github.com/dragonpilot/dev.git
+git remote add origin https://jihulab.com/mr-one/openpilot.git
 git checkout --orphan $SOURCE_BRANCH
 
 # do the files copy
