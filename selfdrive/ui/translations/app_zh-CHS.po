@@ -763,12 +763,12 @@ msgstr "良好"
 #: selfdrive/ui/layouts/settings/device.py:271
 #, python-format
 msgid "Go Offroad"
-msgstr "进入非行驶中"
+msgstr "设置模式"
 
 #: selfdrive/ui/layouts/settings/device.py:271
 #, python-format
 msgid "Go Onroad"
-msgstr "进入行驶中"
+msgstr "退出设置"
 
 #: selfdrive/ui/widgets/pairing_dialog.py:128
 #, python-format
@@ -1294,7 +1294,7 @@ msgstr "未知"
 #: selfdrive/ui/layouts/settings/software.py:48
 #, python-format
 msgid "Updates are only downloaded while the car is off."
-msgstr "仅在车辆熄火时下载更新。"
+msgstr "仅可在设置模式下载更新。"
 
 #: selfdrive/ui/widgets/prime.py:33
 #, python-format
@@ -1434,7 +1434,7 @@ msgstr "comma prime"
 #: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:257
 #, python-format
 msgid "dashy"
-msgstr "dashy"
+msgstr "移动设备访问"
 
 #: dragonpilot/selfdrive/ui/layouts/settings/dragonpilot.py:258
 #, python-format
