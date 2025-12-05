@@ -62,7 +62,7 @@ class SettingsLayout(Widget):
       PanelType.NETWORK: PanelInfo(tr_noop("Network"), NetworkUI(wifi_manager)),
       PanelType.TOGGLES: PanelInfo(tr_noop("Toggles"), TogglesLayout()),
       PanelType.SOFTWARE: PanelInfo(tr_noop("Software"), SoftwareLayout()),
-      PanelType.FIREHOSE: PanelInfo(tr_noop("Firehose"), FirehoseLayout()),
+      #PanelType.FIREHOSE: PanelInfo(tr_noop("Firehose"), FirehoseLayout()),
       PanelType.DEVELOPER: PanelInfo(tr_noop("Developer"), DeveloperLayout()),
       PanelType.DRAGONPILOT: PanelInfo("dp", DragonpilotLayout()),
     }
