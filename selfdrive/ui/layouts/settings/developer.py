@@ -58,20 +58,20 @@ class DeveloperLayout(Widget):
     )
     self._ssh_keys = ssh_key_item(lambda: tr("SSH Keys"), description=lambda: tr(DESCRIPTIONS["ssh_key"]))
 
-    #self._joystick_toggle = toggle_item(
-      #lambda: tr("Joystick Debug Mode"),
-      #description="",
-      #initial_state=self._params.get_bool("JoystickDebugMode"),
-      #callback=self._on_joystick_debug_mode,
-      #enabled=ui_state.is_offroad,
-    #)
+    self._joystick_toggle = toggle_item(
+      lambda: tr("Joystick Debug Mode"),
+      description="",
+      initial_state=self._params.get_bool("JoystickDebugMode"),
+      callback=self._on_joystick_debug_mode,
+      enabled=ui_state.is_offroad,
+    )
 
-    #self._long_maneuver_toggle = toggle_item(
-      #lambda: tr("Longitudinal Maneuver Mode"),
-      #description="",
-      #initial_state=self._params.get_bool("LongitudinalManeuverMode"),
-      #callback=self._on_long_maneuver_mode,
-    #)
+    self._long_maneuver_toggle = toggle_item(
+      lambda: tr("Longitudinal Maneuver Mode"),
+      description="",
+      initial_state=self._params.get_bool("LongitudinalManeuverMode"),
+      callback=self._on_long_maneuver_mode,
+    )
 
     self._alpha_long_toggle = toggle_item(
       lambda: tr("openpilot Longitudinal Control (Alpha)"),
@@ -81,12 +81,12 @@ class DeveloperLayout(Widget):
       enabled=lambda: not ui_state.engaged,
     )
 
-    #self._ui_debug_toggle = toggle_item(
-      #lambda: tr("UI Debug Mode"),
-      #description="",
-      #initial_state=self._params.get_bool("ShowDebugInfo"),
-      #callback=self._on_enable_ui_debug,
-    #)
+    self._ui_debug_toggle = toggle_item(
+      lambda: tr("UI Debug Mode"),
+      description="",
+      initial_state=self._params.get_bool("ShowDebugInfo"),
+      callback=self._on_enable_ui_debug,
+    )
     self._on_enable_ui_debug(self._params.get_bool("ShowDebugInfo"))
 
     self._scroller = Scroller([
