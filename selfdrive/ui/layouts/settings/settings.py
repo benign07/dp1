@@ -63,7 +63,7 @@ class SettingsLayout(Widget):
       PanelType.TOGGLES: PanelInfo(tr_noop("Toggles"), TogglesLayout()),
       PanelType.SOFTWARE: PanelInfo(tr_noop("Software"), SoftwareLayout()),
       #PanelType.FIREHOSE: PanelInfo(tr_noop("Firehose"), FirehoseLayout()),
-      PanelType.DEVELOPER: PanelInfo(tr_noop("Developer"), DeveloperLayout()),
+      PanelType.DEVELOPER: PanelInfo(tr_noop("开发"), DeveloperLayout()),
       PanelType.DRAGONPILOT: PanelInfo("高级", DragonpilotLayout()),
     }
 
