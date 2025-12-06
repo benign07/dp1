@@ -19,7 +19,7 @@ touch prebuilt
 # Add built files to git
 git add -f .
 
-VERSION="dp_v$(date +%y%m%d)"
+VERSION="dp0.10.2"
 git commit -m $VERSION
 git branch -m $VERSION
 git push -f origin $VERSION
