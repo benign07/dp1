@@ -377,7 +377,12 @@ class CAR(Platforms):
     CarSpecs(mass=1690, wheelbase=3.055, steerRatio=17),  # mass: from https://www.hyundai-motor.com.tw/clicktobuy/custin#spec_0, steerRatio: from learner
     flags=HyundaiFlags.CHECKSUM_CRC8,
   )
-
+  HYUNDAI_PALISADE_LX3_HEV = HyundaiCanFDPlatformConfig(
+    [HyundaiCarDocs("Hyundai Palisade HEV (LX3)", car_parts=CarParts.common([CarHarness.hyundai_q]))],
+    CarSpecs(mass=2215, wheelbase=2.97, steerRatio=16),
+    flags=HyundaiFlags.HYBRID,
+  )
+  
   # Kia
   KIA_FORTE = HyundaiPlatformConfig(
     [
